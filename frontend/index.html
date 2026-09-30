@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOC-X Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Security Operations Center</p>
+          <h1>SOC-X</h1>
+        </div>
+        <button id="refreshButton" class="refresh-button">Refresh</button>
+      </header>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <span class="label">Total Logs</span>
+          <strong id="totalLogs">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="label">Total Alerts</span>
+          <strong id="totalAlerts">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="label">Open Alerts</span>
+          <strong id="openAlerts">0</strong>
+        </article>
+        <article class="stat-card urgent">
+          <span class="label">High / Critical</span>
+          <strong id="criticalHighAlerts">0</strong>
+        </article>
+      </section>
+
+      <div id="lastUpdated" class="last-updated">Waiting for data...</div>
+
+      <main class="content-grid">
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Recent Security Alerts</h2>
+          </div>
+          <div id="alertsList" class="list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Source IPs</h2>
+          </div>
+          <div id="sourceIpsList" class="source-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Alert Details</h2>
+          </div>
+          <div id="alertDetail" class="alert-detail"></div>
+        </section>
+
+        <section class="panel full-width">
+          <div class="panel-header">
+            <h2>Recent Events</h2>
+          </div>
+          <div id="eventsList" class="events-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
